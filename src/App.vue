@@ -1,13 +1,13 @@
 <template>
-  <app-header />
+  <app-header></app-header>
   <!-- Introduction -->
-  <app-intro />
+  <app-intro></app-intro>
   <!-- Main Content -->
-  <app-main />
+  <app-main></app-main>
   <!-- Player -->
-  <app-player />
+  <app-player></app-player>
   <!-- Auth Modal -->
-  <app-auth />
+  <app-auth></app-auth>
 </template>
 
 <script>
