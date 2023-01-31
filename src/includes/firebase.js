@@ -7,6 +7,12 @@ import {
   signOut,
 } from "firebase/auth";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FB_API_KEY,
@@ -19,6 +25,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const storage = getStorage(app);
 const db = getFirestore();
 const createUser = createUserWithEmailAndPassword;
 
@@ -31,4 +38,8 @@ export {
   setDoc,
   signInWithEmailAndPassword,
   signOut,
+  storage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
 };

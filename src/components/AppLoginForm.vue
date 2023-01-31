@@ -44,7 +44,7 @@ import { mapActions } from "pinia";
 import useUserStore from "@/stores/user";
 
 export default {
-  name: "AuthLoginForm",
+  name: "AppLoginForm",
   data() {
     return {
       loginSchema: {

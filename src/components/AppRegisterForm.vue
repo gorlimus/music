@@ -111,7 +111,7 @@ import { mapActions } from "pinia";
 import useUserStore from "@/stores/user";
 
 export default {
-  name: "AuthRegisterForm",
+  name: "AppRegisterForm",
   data() {
     return {
       schema: {
