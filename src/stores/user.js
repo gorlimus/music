@@ -7,7 +7,7 @@ import {
   setDoc,
   updateProfile,
   signInWithEmailAndPassword,
-  signOut,
+  signOut as signout,
 } from "@/includes/firebase";
 
 export default defineStore("user", {
@@ -36,8 +36,8 @@ export default defineStore("user", {
 
       this.userLoggedIn = true;
     },
-    async signout() {
-      await signOut(auth);
+    async signOut() {
+      await signout(auth);
       this.userLoggedIn = false;
     },
   },
