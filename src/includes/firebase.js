@@ -6,12 +6,27 @@ import {
   updateProfile,
   signOut,
 } from "firebase/auth";
-import { getFirestore, setDoc, doc } from "firebase/firestore";
+
+import {
+  getFirestore,
+  collection,
+  setDoc,
+  addDoc,
+  doc,
+  query,
+  where,
+  getDocs,
+  getDoc,
+  updateDoc,
+  deleteDoc,
+} from "firebase/firestore";
+
 import {
   getStorage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
+  deleteObject,
 } from "firebase/storage";
 
 const firebaseConfig = {
@@ -28,18 +43,30 @@ const auth = getAuth(app);
 const storage = getStorage(app);
 const db = getFirestore();
 const createUser = createUserWithEmailAndPassword;
+const songsCollection = collection(db, "songs");
+const usersCollection = collection(db, "users");
 
 export {
   auth,
   createUser,
   updateProfile,
   db,
+  songsCollection,
+  usersCollection,
   doc,
   setDoc,
+  addDoc,
   signInWithEmailAndPassword,
   signOut,
+  query,
+  where,
+  getDoc,
+  getDocs,
+  updateDoc,
+  deleteDoc,
   storage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
+  deleteObject,
 };
