@@ -15,6 +15,9 @@ import {
   doc,
   query,
   where,
+  orderBy,
+  limit,
+  startAfter,
   getDocs,
   getDoc,
   updateDoc,
@@ -45,14 +48,16 @@ const db = getFirestore();
 const createUser = createUserWithEmailAndPassword;
 const songsCollection = collection(db, "songs");
 const usersCollection = collection(db, "users");
+const commentsCollection = collection(db, "comments");
 
 export {
   auth,
   createUser,
   updateProfile,
   db,
-  songsCollection,
   usersCollection,
+  songsCollection,
+  commentsCollection,
   doc,
   setDoc,
   addDoc,
@@ -60,6 +65,9 @@ export {
   signOut,
   query,
   where,
+  orderBy,
+  limit,
+  startAfter,
   getDoc,
   getDocs,
   updateDoc,

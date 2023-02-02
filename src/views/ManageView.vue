@@ -44,7 +44,7 @@ import {
   getDocs,
 } from "@/includes/firebase";
 export default {
-  name: "manageView",
+  name: "ManageView",
   components: { AppUpload, CompositionItem },
   data() {
     return {
