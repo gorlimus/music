@@ -7,8 +7,12 @@
     </div>
     <div class="flex flex-nowrap gap-4 items-center">
       <!-- Play/Pause Button -->
-      <button type="button">
-        <i class="fa fa-play text-gray-500 text-xl"></i>
+      <button @click.prevent="toggleAudio" type="button">
+        <i
+          class="fa text-gray-500 text-xl"
+          :class="{ 'fa-play': !playing, 'fa-pause': playing }"
+        >
+        </i>
       </button>
       <!-- Current Position -->
       <div class="player-currenttime">00:00</div>
@@ -34,7 +38,16 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "pinia";
+import usePlayerStore from "@/stores/player";
 export default {
   name: "AppPlayer",
+  methods: {
+    ...mapActions(usePlayerStore, ["toggleAudio"]),
+  },
+  computed: {
+    ...mapState(usePlayerStore, ["playing"]),
+  },
+  created() {},
 };
 </script>

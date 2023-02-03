@@ -3,9 +3,8 @@
 
   <router-view></router-view>
 
-  <!-- Player -->
-  <app-player></app-player>
-  <!-- Auth Modal -->
+  <app-player />
+
   <app-auth />
 </template>
 

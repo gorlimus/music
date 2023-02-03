@@ -8,10 +8,11 @@
     <div class="container mx-auto flex items-center">
       <!-- Play/Pause Button -->
       <button
+        @click.prevent="newSong(song)"
         type="button"
         class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full focus:outline-none"
       >
-        <i class="fas fa-play"></i>
+        <i class="fa fa-play"></i>
       </button>
       <div class="z-50 text-left ml-8">
         <!-- Song Info -->
@@ -23,7 +24,10 @@
   <!-- Form -->
   <section class="container mx-auto mt-6">
     <div class="bg-white rounded border border-gray-200 relative flex flex-col">
-      <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
+      <div
+        v-if="song.comment_count > 0"
+        class="px-6 pt-6 pb-5 font-bold border-b border-gray-200"
+      >
         <!-- Comment Count -->
         <span class="card-title">{{ song.comment_count }}</span>
         <i class="fa fa-comments float-right text-green-400 text-2xl"></i>
@@ -95,12 +99,14 @@ import {
   addDoc,
   getDoc,
   getDocs,
+  updateDoc,
   query,
   auth,
   where,
 } from "@/includes/firebase";
-import { mapStores } from "pinia";
+import { mapStores, mapActions } from "pinia";
 import useUserStore from "@/stores/user";
+import usePlayerStore from "@/stores/player";
 
 export default {
   name: "SongView",
@@ -136,10 +142,16 @@ export default {
       return;
     }
 
+    const { sort } = this.$route.query;
+
+    this.sort = sort === "1" || sort === "2" ? sort : "1";
+
     this.song = songSnap.data();
     this.getComments();
   },
   methods: {
+    ...mapActions(usePlayerStore, ["newSong"]),
+
     async addComment(values, { resetForm }) {
       this.comment_in_submission = true;
       this.comment_show_alert = true;
@@ -154,6 +166,7 @@ export default {
         uid: auth.currentUser.uid,
       };
       await addDoc(commentsCollection, comment);
+
       this.getComments();
 
       this.comment_in_submission = false;
@@ -177,6 +190,23 @@ export default {
           ...document.data(),
         }),
       ]);
+      this.song.comment_count = this.comments.length;
+      await updateDoc(doc(db, "songs", this.$route.params.id), {
+        comment_count: this.song.comment_count,
+      });
+    },
+  },
+  watch: {
+    sort(newVal) {
+      if (newVal === this.$route.query.sort) {
+        return;
+      }
+
+      this.$router.push({
+        query: {
+          sort: newVal,
+        },
+      });
     },
   },
 };
