@@ -1,0 +1,44 @@
+{
+  "home": {
+    "listen": " !האזינו למוזיקה מעולה ",
+    "songs": "שירים"
+  },
+  "header": {
+    "about": "על אודות",
+    "login_register": "התחבר / הרשמה",
+    "manage": "לנהל",
+    "logout": "להתנתק"
+  },
+  "auth": {
+    "account": "החשבון שלך",
+    "login": "התחברות",
+    "register": "הירשם"
+  },
+  "login": {
+    "email": "אימייל",
+    "password": "סיסמה",
+    "submit": "שלח",
+    "alert_msg": "עֵרָנִי"
+  },
+  "song": {
+    "comment_count": " תגובה 1 | אין תגובה | {count} הערות "
+  },
+  "register": {
+    "name": "שֵׁם",
+    "email": "אימייל",
+    "age": "גיל",
+    "password": "סיסמה",
+    "confirm_password": "אשר סיסמה",
+    "country": "מדינה",
+    "usa": "ארה''ב",
+    "europe": "אֵירוֹפָּה",
+    "russia": "רוּסִיָה",
+    "israel": "ישראל",
+    "submit": "שלח",
+    "accept": "אני מקבל {0}",
+    "tos": "תנאי השירות"
+  },
+  "manage": {
+    "my_songs": "השירים שלי"
+  }
+}
