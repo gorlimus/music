@@ -31,6 +31,7 @@ import {
   getDownloadURL,
   deleteObject,
 } from "firebase/storage";
+import { enableIndexedDbPersistence } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FB_API_KEY,
@@ -45,6 +46,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
 const db = getFirestore();
+
+enableIndexedDbPersistence(db).catch((err) => {
+  if (err.code == "failed-precondition") {
+    console.log(`Firebase persistance error ${err.code}`);
+  } else if (err.code == "unimplemented") {
+    console.log(`Firebase unimplemented error ${err.code}`);
+  }
+});
+
 const createUser = createUserWithEmailAndPassword;
 const songsCollection = collection(db, "songs");
 const usersCollection = collection(db, "users");

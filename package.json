@@ -35,9 +35,11 @@
     "jsdom": "^20.0.3",
     "postcss": "^8.4.21",
     "prettier": "^2.7.1",
+    "rollup-plugin-terser": "^7.0.2",
     "start-server-and-test": "^1.15.2",
     "tailwindcss": "^3.2.4",
     "vite": "^4.0.0",
+    "vite-plugin-pwa": "^0.14.1",
     "vitest": "^0.25.6"
   }
 }
