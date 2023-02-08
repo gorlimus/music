@@ -96,15 +96,14 @@
         value="1"
         class="w-4 h-4 float-left -ml-6 mt-1 rounded"
       />
-      <i18n-t
+      <label
         class="inline-block"
         for="checkbox"
         keypath="register.accept"
         tag="label"
-        ><a href="#">
-          {{ $t("register.tos") }}
-        </a>
-      </i18n-t>
+      >
+        {{ $t("register.tos") }}
+      </label>
       <ErrorMessage class="text-red-600 block" name="tos" />
     </div>
     <button
@@ -151,7 +150,6 @@ export default {
       this.reg_in_submission = true;
       this.reg_alert_variant = "bg-blue-500";
       this.reg_alert_msg = "Please wait! Your account is being created.";
-
       //auth user & add to DB
       try {
         this.createUser(values);
@@ -162,10 +160,8 @@ export default {
           "An unexpected error occured. Please try again later.";
         return;
       }
-
       this.reg_alert_variant = "bg-green-500";
       this.reg_alert_msg = "Success!";
-      window.location.reload();
     },
   },
 };
