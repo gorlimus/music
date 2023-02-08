@@ -1,1 +1,6 @@
-<template><h1>about!</h1></template>
+<template>
+  <div class="about">
+    <h1>about!</h1>
+    <base-app-button />
+  </div>
+</template>

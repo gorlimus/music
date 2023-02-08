@@ -147,20 +147,24 @@ export default {
       });
     },
   },
-  async created() {
-    const songSnap = await getDoc(doc(db, "songs", this.$route.params.id));
-    if (!songSnap.exists()) {
-      this.$router.push({ name: "home" });
-      return;
-    }
+  async beforeRouteEnter(to, from, next) {
+    const songSnap = await getDoc(doc(db, "songs", to.params.id));
 
-    const { sort } = this.$route.query;
+    next((vm) => {
+      if (!songSnap.exists()) {
+        vm.$router.push({ name: "home" });
+        return;
+      }
 
-    this.sort = sort === "1" || sort === "2" ? sort : "1";
+      const { sort } = vm.$route.query;
 
-    this.song = songSnap.data();
-    this.getComments();
+      vm.sort = sort === "1" || sort === "2" ? sort : "1";
+
+      vm.song = songSnap.data();
+      vm.getComments();
+    });
   },
+
   methods: {
     ...mapActions(usePlayerStore, ["newSong"]),
 

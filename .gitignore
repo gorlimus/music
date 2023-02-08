@@ -13,16 +13,18 @@ dist
 dist-ssr
 coverage
 *.local
-.env
 dev-dist
-POP
 
+src/includes/_globals.js
+src/components/base
 /cypress/videos/
 /cypress/screenshots/
 
 # Editor directories and files
+.env
 .vscode/*
 !.vscode/extensions.json
+stats.html
 .idea
 *.suo
 *.ntvs*
