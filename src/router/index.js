@@ -23,7 +23,6 @@ const routes = [
     path: "/manage-music",
     component: ManageView,
     beforeEnter: (to, from, next) => {
-      console.log("Manage Route Guard");
       next();
     },
     meta: {

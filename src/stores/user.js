@@ -16,7 +16,6 @@ export default defineStore("user", {
   }),
   actions: {
     async register(values) {
-      console.log("YOU ARE INSIDE store/user/reg()");
       const { user } = await createUser(auth, values.email, values.password);
 
       await setDoc(doc(db, "users", user.uid), {
