@@ -3,6 +3,9 @@
     "listen": "Listen to Great Music!",
     "songs": "Songs"
   },
+  "about": {
+    "about": "About"
+  },
   "header": {
     "about": "About",
     "login_register": "Login / Register",

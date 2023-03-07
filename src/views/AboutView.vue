@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>about!</h1>
+    <h1>{{ $t("about.about") }}</h1>
     <base-app-button />
   </div>
 </template>
