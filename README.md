@@ -1,8 +1,6 @@
 # Music Player Application
 
-[Demo](https://github.com/gorlimus/music)
-
-You can easily upload and listen to music with help of this App.
+You can easily upload and listen to music with help of this [App](https://music-seven-rosy.vercel.app/).
 
 ## Description
 
