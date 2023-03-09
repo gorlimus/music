@@ -1,70 +1,44 @@
 # Music Player Application
 
-using
-<span class="text-greAcc">Vue</span> and
-<span class="text-greAcc">Tailwind</span>, solely for educational and
+[Demo](https://github.com/gorlimus/music)
+
+You can easily upload and listen to music with help of this App.
+
+## Description
+
+I built a Full Stack Music Player Application using
+Vue and Vite, solely for educational and
 learning purposes. This project allowed me to improve my skills in
 creating fast and dynamic web apps and dive deeper into modern
 technologies.
 
-## Description
+### Features
 
-An in-depth paragraph about your project and overview of use.
+- CRUD
+- Auth
+- Upload and listen to music
+- Leave and sort comments
+- Responsive design
+- [Progress Bar](https://www.npmjs.com/package/progress-bar)
+- [Internationalization](https://www.npmjs.com/package/i18n)
+- PWA
+- Testing
 
-## Getting Started
+### Frontend
 
-### Dependencies
+- [Vue 3](https://vuejs.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [Pinia](https://pinia.vuejs.org/)
+- Vue Routes
 
-- Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-- ex. Windows 10
+### Backend
 
-### Installing
-
-- How/where to download your program
-- Any modifications needed to be made to files/folders
-
-### Executing program
-
-- How to run the program
-- Step-by-step bullets
-
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-
-```
-command to run if program contains helper info
-```
+- [Vite](https://vitejs.dev/)
+- [Firebase](https://firebase.google.com/)
+- [Vitest](https://vitest.dev/)
+- [Vercel](https://vercel.com/)
+- Git
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-- 0.2
-  - Various bug fixes and optimizations
-  - See [commit change]() or See [release history]()
-- 0.1
-  - Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-
-- [awesome-readme](https://github.com/matiassingers/awesome-readme)
-- [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-- [dbader](https://github.com/dbader/readme-template)
-- [zenorocha](https://gist.github.com/zenorocha/4526327)
-- [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+ex. [@gorlimus](https://www.linkedin.com/in/gorlimus/)
