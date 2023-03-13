@@ -17,16 +17,16 @@
       >
 
       <div
-        class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+        class="inline-block align-bottom bg-primary rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
       >
         <!-- Add margin if you want to see some of the overlay behind the modal-->
         <div class="py-4 text-left px-6">
           <!--Title-->
           <div class="flex justify-between items-center pb-4">
-            <p class="text-2xl font-bold">{{ $t("auth.account") }}</p>
+            <p class="text-2xl font-bold text-pale">{{ $t("auth.account") }}</p>
             <!-- Modal Close Button -->
             <div
-              class="modal-close cursor-pointer z-50"
+              class="modal-close cursor-pointer z-50 text-pale"
               @click="modalVisibility = false"
             >
               <i class="fas fa-times"></i>
@@ -35,14 +35,14 @@
 
           <!-- Tabs -->
           <ul class="flex flex-wrap mb-4">
-            <li class="flex-auto text-center">
+            <li class="flex-auto text-center text-pale">
               <a
                 class="block rounded py-3 px-4 transition"
                 href="#"
                 @click.prevent="tab = 'login'"
                 :class="{
-                  'hover:text-white text-white bg-blue-600': tab === 'login',
-                  'hover:text-blue-600': tab === 'register',
+                  'hover:text-white text-white bg-bluAcc': tab === 'login',
+                  'hover:text-bluAcc ': tab === 'register',
                 }"
                 >{{ $t("auth.login") }}</a
               >
@@ -53,8 +53,8 @@
                 href="#"
                 @click.prevent="tab = 'register'"
                 :class="{
-                  'hover:text-white text-white bg-blue-600': tab === 'register',
-                  'hover:text-blue-600': tab === 'login',
+                  'hover:text-white text-white bg-bluAcc': tab === 'register',
+                  'hover:text-bluAcc': tab === 'login',
                 }"
                 >{{ $t("auth.register") }}</a
               >

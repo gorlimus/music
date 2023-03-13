@@ -15,6 +15,12 @@ export default {
     if (binding.modifiers.green) {
       iconClass += " text-green-400";
     }
+    if (binding.modifiers.primary) {
+      iconClass += " text-primary";
+    }
+    if (binding.modifiers.secondary) {
+      iconClass += " text-secondary";
+    }
 
     el.innerHTML += `<i class="${iconClass}"></i>`;
   },

@@ -1,9 +1,9 @@
 <template>
-  <header id="header" class="bg-gray-700">
+  <header id="header" class="bg-pale w-screen z-10">
     <nav class="container mx-auto flex justify-start items-center py-5 px-4">
       <!-- App Name -->
       <router-link
-        class="text-white font-bold uppercase text-2xl mr-4"
+        class="text-primary font-bold uppercase text-2xl mr-4"
         :to="{ name: 'home' }"
         exact-active-class="no-active"
         >Music</router-link
@@ -14,13 +14,13 @@
         <ul class="flex flex-row mt-1">
           <!-- Navigation Links -->
           <li>
-            <router-link class="px-2 text-white" :to="{ name: 'about' }">{{
+            <router-link class="px-2 text-primary" :to="{ name: 'about' }">{{
               $t("header.about")
             }}</router-link>
           </li>
           <li tag="li" v-if="!userStore.userLoggedIn">
             <a
-              class="px-2 text-white"
+              class="px-2 text-primary"
               href="#"
               @click.prevent="toggleAuthModal"
             >
@@ -29,12 +29,12 @@
           </li>
           <template v-else>
             <li>
-              <router-link class="px-2 text-white" :to="{ name: 'manage' }">
+              <router-link class="px-2 text-primary" :to="{ name: 'manage' }">
                 {{ $t("header.manage") }}
               </router-link>
             </li>
             <li>
-              <a class="px-2 text-white" href="#" @click.prevent="signOut">
+              <a class="px-2 text-primary" href="#" @click.prevent="signOut">
                 {{ $t("header.logout") }}
               </a>
             </li>
@@ -42,7 +42,7 @@
         </ul>
         <ul class="ml-auto">
           <li>
-            <a class="px-2 text-white" href="#" @click.prevent="changeLocale">
+            <a class="px-2 text-primary" href="#" @click.prevent="changeLocale">
               {{ currentLocale }}
             </a>
           </li>

@@ -1,23 +1,27 @@
 @import "./base.css";
+
+html {
+  background-color: #ffd166;
+}
 a {
   transition: all 0.15s ease;
 }
 
 /* text-yellow-500 */
 a:hover {
-  color: #f59e0b;
+  color: #ef476f;
   text-decoration: none;
 }
 
 .text-orange {
-  color: #f59e0b !important;
-  fill: #f59e0b !important;
+  color: #ef476f !important;
+  fill: #ef476f !important;
 }
 
 .card-header .fa.text-orange,
 .card .card-header .fas.text-orange {
-  color: #ff5e3a;
-  fill: #ff5e3a;
+  color: #ef476f;
+  fill: #ef476f;
 }
 
 .introduction-bg {
@@ -29,11 +33,14 @@ a:hover {
 #playlist li:first-child {
   padding-top: 25px;
 }
+#playlist li:last-child {
+  padding-bottom: 25px;
+}
 
 .upload-dropbox.upload-dropbox-drag {
   color: #fff;
-  background-color: #20d862;
-  border-color: #20d862;
+  background-color: #06d6a0;
+  border-color: #06d6a0;
   border-style: solid;
 }
 

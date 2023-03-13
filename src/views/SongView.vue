@@ -1,17 +1,16 @@
 <template>
   <main>
     <!-- Music Header -->
-    <section class="w-full mb-8 py-14 text-center text-white relative">
+    <section class="w-full mb-8 py-14 text-center text-secondary relative">
       <div
-        class="absolute inset-0 w-full h-full box-border bg-contain music-bg"
-        style="background-image: url(/assets/img/song-header.png)"
+        class="absolute inset-0 w-full h-full box-border bg-contain music-bg bg-pale"
       ></div>
       <div class="container mx-auto flex items-center">
         <!-- Play/Pause Button -->
         <button
           @click.prevent="newSong(song)"
           type="button"
-          class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full focus:outline-none"
+          class="mx-4 z-50 h-24 w-24 text-3xl bg-primary text-secondary rounded-full focus:outline-none"
         >
           <i
             :class="{ 'fa-play': !playing, 'fa-pause': playing }"
@@ -28,18 +27,29 @@
     <!-- Form -->
     <section class="container mx-auto mt-6" id="comments">
       <div
-        class="bg-white rounded border border-gray-200 relative flex flex-col"
+        class="bg-primary rounded border border-secondary relative flex flex-col"
       >
-        <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
+        <div
+          class="px-6 pt-6 pb-5 font-bold border-b border-secondary relative"
+        >
           <!-- Comment Count -->
-          <span class="card-title">
+          <span class="card-title text-pale">
             {{
               $tc("song.comment_count", song.comment_count, {
                 count: song.comment_count,
               })
             }}</span
           >
-          <i class="fa fa-comments float-right text-green-400 text-2xl"></i>
+          <select
+            v-model="sort"
+            class="block py-1.5 px-3 text-pale border border-secondary bg-white/50 transition duration-500 focus:outline-none focus:border-bluAcc rounded"
+          >
+            <option value="1">Latest</option>
+            <option value="2">Oldest</option>
+          </select>
+          <i
+            class="absolute right-4 bottom-10 fa fa-comments float-right text-secondary text-2xl"
+          ></i>
         </div>
         <div class="p-6">
           <div
@@ -57,43 +67,36 @@
             <vee-field
               as="textarea"
               name="comment"
-              class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded mb-4"
+              class="block w-full py-1.5 px-3 text-pale border border-secondary transition-all duration-500 focus:outline-none focus:border-bluAcc rounded mb-4 bg-white/50"
               placeholder="Your comment here..."
             ></vee-field>
-            <ErrorMessage class="text-red-600" name="comment" />
+            <ErrorMessage class="text-secondary" name="comment" />
             <button
               :disabled="comment_in_submission"
               type="submit"
-              class="py-1.5 px-3 rounded text-white bg-green-600 block"
+              class="py-1.5 px-3 rounded text-white bg-greAcc block"
             >
               Submit
             </button>
           </vee-form>
           <!-- Sort Comments -->
-          <select
-            v-model="sort"
-            class="block mt-4 py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
-          >
-            <option value="1">Latest</option>
-            <option value="2">Oldest</option>
-          </select>
         </div>
       </div>
     </section>
     <!-- Comments -->
-    <ul class="container mx-auto">
+    <ul class="container mx-auto mb-20">
       <li
         v-for="comment in sortedComments"
         :key="comment.docID"
-        class="p-6 bg-gray-50 border border-gray-200"
+        class="p-6 bg-primary border border-secondary"
       >
         <!-- Comment Author -->
-        <div class="mb-5">
-          <div class="font-bold">{{ comment.name }}</div>
-          <time>{{ comment.datePosted }}</time>
+        <div class="mb-2">
+          <div class="font-bold text-secondary">{{ comment.name }}</div>
+          <time class="text-pale/25">{{ comment.datePosted }}</time>
         </div>
 
-        <p>
+        <p class="text-pale">
           {{ comment.content }}
         </p>
       </li>
@@ -171,7 +174,7 @@ export default {
     async addComment(values, { resetForm }) {
       this.comment_in_submission = true;
       this.comment_show_alert = true;
-      this.comment_alert_variant = "bg-blue-500";
+      this.comment_alert_variant = "bg-bluAcc";
       this.comment_alert_msg = "Please wait! Your comment is being submitted.";
 
       const comment = {
@@ -187,7 +190,7 @@ export default {
 
       this.comment_in_submission = false;
       this.comment_show_alert = true;
-      this.comment_alert_variant = "bg-green-500";
+      this.comment_alert_variant = "bg-greAcc";
       this.comment_alert_msg = "Success!";
 
       resetForm();

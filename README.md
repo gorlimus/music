@@ -10,7 +10,7 @@ learning purposes. This project allowed me to improve my skills in
 creating fast and dynamic web apps and dive deeper into modern
 technologies.
 
-### Features
+## Features
 
 - CRUD
 - Auth

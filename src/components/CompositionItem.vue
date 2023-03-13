@@ -1,15 +1,17 @@
 <template>
-  <div class="border border-gray-200 p-3 mb-4 rounded">
+  <div class="border border-secondary p-3 mb-4 rounded">
     <div v-show="!showForm">
-      <h4 class="inline-block text-2xl font-bold">{{ song.modified_name }}</h4>
+      <h4 class="inline-block text-2xl font-bold text-secondary">
+        {{ song.modified_name }}
+      </h4>
       <button
-        class="ml-1 py-1 px-2 text-sm rounded text-white bg-red-600 float-right"
+        class="ml-1 py-1 px-2 text-sm rounded text-white bg-secondary/75 float-right hover:bg-secondary transition"
         @click.prevent="deleteSong"
       >
         <i class="fa fa-times"></i>
       </button>
       <button
-        class="ml-1 py-1 px-2 text-sm rounded text-white bg-blue-600 float-right"
+        class="ml-1 py-1 px-2 text-sm rounded text-white bg-bluAcc/75 float-right hover:bg-bluAcc transition"
         @click.prevent="showForm = !showForm"
       >
         <i class="fa fa-pencil-alt"></i>
@@ -30,42 +32,47 @@
         :initial-values="song"
       >
         <div class="mb-3">
-          <label class="inline-block mb-2">{{ song.modified_name }}</label>
+          <label class="inline-block mb-2 text-secondary">{{
+            song.modified_name
+          }}</label>
           <vee-field
             name="modified_name"
             type="text"
-            class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
+            class="block w-full py-1.5 px-3 text-gray-800 border border-secondary transition duration-500 focus:outline-none focus:border-bluAcc rounded bg-white/50 focus:bg-white/75"
             placeholder="Enter Song Title"
             @input="updateUnsavedFlag(true)"
           />
-          <ErrorMessage class="text-red-600" name="modified_name" />
+          <ErrorMessage class="text-secondary" name="modified_name" />
         </div>
         <div class="mb-3">
           <label class="inline-block mb-2">{{ song.genre }}</label>
           <vee-field
             name="genre"
             type="text"
-            class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
+            class="block w-full py-1.5 px-3 text-pale border border-secondary transition duration-500 focus:outline-none focus:border-bluAcc rounded bg-white/50 focus:bg-white/75"
             placeholder="Enter Genre"
             @input="updateUnsavedFlag(true)"
           />
-          <ErrorMessage class="text-red-600" name="genre" />
+          <ErrorMessage class="text-secondary" name="genre" />
         </div>
-        <button
-          type="submit"
-          class="py-1.5 px-3 rounded text-white bg-green-600"
-          :disabled="in_submission"
-        >
-          Submit
-        </button>
-        <button
-          type="button"
-          class="py-1.5 px-3 rounded text-white bg-gray-600"
-          :disabled="in_submission"
-          @click="showForm = false"
-        >
-          Go Back
-        </button>
+        <div class="w-full flex justify-between">
+          <button
+            type="submit"
+            class="py-1.5 px-3 rounded text-white bg-greAcc/75 hover:bg-greAcc transition"
+            :disabled="in_submission"
+            @click="showForm = false"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            class="py-1.5 px-3 rounded text-white bg-bluAcc/75 hover:bg-bluAcc transition"
+            :disabled="in_submission"
+            @click="showForm = false"
+          >
+            Go Back
+          </button>
+        </div>
       </vee-form>
     </div>
   </div>
@@ -114,7 +121,7 @@ export default {
       },
       in_submission: false,
       show_alert: false,
-      alert_variant: "bg-blue-500",
+      alert_variant: "bg-bluAcc",
       alert_msg: "Please wait! Updating song info.",
     };
   },
@@ -122,7 +129,7 @@ export default {
     async edit(values) {
       this.in_submission = true;
       this.show_alert = true;
-      this.alert_variant = "bg-blue-500";
+      this.alert_variant = "bg-bluAcc";
       this.alert_msg = "Please wait! Updating song info.";
 
       const songRef = doc(db, "songs", this.song.docID);
@@ -132,7 +139,7 @@ export default {
       } catch (error) {
         this.in_submission = false;
         this.show_alert = true;
-        this.alert_variant = "bg-red-500";
+        this.alert_variant = "bg-secondary";
         this.alert_msg = "Something went wrong. Try again later.";
         return;
       }
@@ -140,7 +147,7 @@ export default {
       this.updateUnsavedFlag(false);
 
       this.in_submission = false;
-      this.alert_variant = "bg-green-500";
+      this.alert_variant = "bg-greAcc";
       this.alert_msg = "Success";
     },
     async deleteSong() {
