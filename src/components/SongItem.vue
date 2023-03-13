@@ -20,8 +20,8 @@
         v-slot="{ navigate }"
       >
         <span class="comments" @click="navigate">
-          <i class="fa fa-comments text-secondary"></i>
-          {{ song.comment_count }}
+          <i class="fa fa-comments text-secondary px-3"></i>
+          <!-- {{ song.comment_count }} -->
         </span>
       </router-link>
     </div>

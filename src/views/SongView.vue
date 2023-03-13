@@ -133,7 +133,7 @@ export default {
       },
       comment_in_submission: false,
       comment_show_alert: false,
-      comment_alert_variant: "bg-blue-500",
+      comment_alert_variant: "bg-bluAcc",
       comment_alert_msg: "Please wait! Your comment is being submitted.",
     };
   },

@@ -1,12 +1,12 @@
 <template>
-  <header id="header" class="bg-pale w-screen z-10">
+  <header id="header" class="bg-pale w-screen">
     <nav class="container mx-auto flex justify-start items-center py-5 px-4">
       <!-- App Name -->
       <router-link
         class="text-primary font-bold uppercase text-2xl mr-4"
         :to="{ name: 'home' }"
         exact-active-class="no-active"
-        >Music</router-link
+        >Musicify</router-link
       >
 
       <div class="flex flex-grow items-center">
@@ -62,7 +62,7 @@ export default {
   computed: {
     ...mapStores(useModalStore, useUserStore),
     currentLocale() {
-      return this.$i18n.locale === "he" ? "עִברִית(beta)" : "English";
+      return this.$i18n.locale === "he" ? "עִברִית(demo)" : "English";
     },
   },
   methods: {

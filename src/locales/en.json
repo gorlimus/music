@@ -1,10 +1,11 @@
 {
   "home": {
     "listen": "Listen to Great Music!",
+    "description": "Welcome to my Web Music Application! Here you can upload and enjoy your favorite music online, discover new tracks from other users.    My application is built using modern technologies such as Vue, Vite, Tailwind. Start listening right now and enjoy the music you love!",
     "songs": "Songs"
   },
   "about": {
-    "about": "About"
+    "title": "About"
   },
   "header": {
     "about": "About",

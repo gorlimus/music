@@ -4,49 +4,45 @@
       <div class="container mx-auto">
         <div class="text-secondary main-header-content">
           <h1 class="font-bold text-5xl mb-5">Hello!</h1>
-          <p class="w-full md:w-8/12 mx-auto">
-            My name is Vladimir Heifetz, and I am a fullstack developer with a
-            passion for creating innovative solutions to complex problems.
+          <p class="w-full max-w-xl mx-auto">
+            This webapp is built using HTML, Tailwind CSS, Vue, Pinia,
+            Vue-Router, Vee-Validate, PWA, Firebase, Vite, Vitest, and hosted on
+            Vercel.
             <br />
             <br />
-            I built a Full Stack Music Player Application using Vue and Vite,
-            solely for educational and learning purposes. This project allowed
-            me to improve my skills in creating fast and dynamic web apps and
-            dive deeper into modern technologies.
+            To provide a seamless user experience, I have added auth features
+            using Firebase Authentication. Users can sign up or log in to their
+            accounts to upload and listen to music, leave and sort comments on
+            songs.
             <br />
             <br />
-            My journey as a fullstack developer began when I first discovered my
-            love for programming. I was fascinated by the way that code could be
-            used to create dynamic and interactive websites, and I knew that I
-            wanted to pursue a career in this field. I have honed my skills as a
-            developer and have become proficient in a range of languages,
-            including HTML, CSS, JS.
+            For state management, I have used Pinia, a lightweight and fast
+            state management library for Vue. It helps to manage the application
+            state in a more organized and efficient way.
             <br />
             <br />
-            As a fullstack developer, I am able to work on both the front-end
-            and back-end of websites and applications. This means that I can
-            create beautiful and intuitive user interfaces, as well as build
-            robust and scalable server-side systems. I am passionate about
-            creating applications that not only look great, but also perform
-            flawlessly.
+            To ensure a responsive design, I have utilized Tailwind CSS, a
+            utility-first CSS framework. It enables me to create responsive
+            designs quickly and efficiently by using pre-defined CSS classes.
+            <!-- To ensure that the webapp can be used on mobile devices as well, I have
+            made it a Progressive Web App (PWA). Users can easily add it to
+            their home screens, and it functions like a native app. -->
             <br />
             <br />
-            One of my main strengths as a developer is my ability to learn
-            quickly and adapt to new technologies. In the constantly evolving
-            world of software development, it is important to stay up-to-date
-            with the latest trends and best practices. I am always looking for
-            new challenges and opportunities to learn, and I am committed to
-            continuous improvement.
+            I have implemented internationalization using Vue-i18n to provide a
+            better user experience to non-native English speakers.
             <br />
             <br />
-            In addition to my technical skills, I am also a team player and a
-            good communicator. I understand the importance of collaboration and
-            am always willing to work closely with my clients and colleagues to
-            ensure that we are all on the same page. I believe that clear
-            communication is key to the success of any project, and I make it a
-            priority to keep everyone informed and involved throughout the
-            development process. Thank you for visiting my Fullstack Music
-            Player Application!
+            Using Vite, a fast build tool for modern web apps, the webapp is
+            built and served in development mode at lightning-fast speeds. To
+            ensure the quality of the code, I have implemented automated testing
+            using Vitest, a lightweight testing library for Vue.
+            <br />
+            <br />
+            The webapp is hosted on Vercel, providing a fast and reliable
+            hosting experience. Overall, Musicify is a great webapp for music
+            lovers to upload, listen to, and interact with music while providing
+            a smooth user experience, thanks to the various technologies used.
           </p>
         </div>
       </div>

@@ -10,12 +10,8 @@
           <h1 class="font-bold text-5xl mb-5">
             {{ $t("home.listen") }}
           </h1>
-          <p class="w-full md:w-6/12 mx-auto text-secondary text-lg">
-            Welcome to my Web Music Application! Here you can upload and enjoy
-            your favorite music online, discover new tracks from other users.
-            <br />
-            My application is built using modern technologies such as Vue, Vite,
-            Tailwind. Start listening right now and enjoy the music you love!
+          <p class="w-full md:w-6/12 mx-auto text-secondary text-lg px-2">
+            {{ $t("home.description") }}
           </p>
         </div>
       </div>
@@ -27,11 +23,11 @@
       >
         <div
           class="px-6 pt-6 pb-5 font-bold border-b border-secondary bg-white/25"
-          v-icon.right.secondary="'headphones-alt'"
         >
-          <span class="card-title text-pale font-bold text-xl">{{
-            $t("home.songs")
-          }}</span>
+          <span class="card-title text-pale font-bold text-xl">
+            {{ $t("home.songs") }}
+          </span>
+          <i v-icon.right.secondary="'headphones-alt'"></i>
           <!-- Icon -->
         </div>
         <!-- Playlist -->
